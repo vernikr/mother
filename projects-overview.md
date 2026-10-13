@@ -1,6 +1,6 @@
 # GitHub projects overview
 
-**Scope.** 37 repositories owned by `vernikr`, including private repositories and forks, captured 2026-10-13. Commit counts are for the default branch; for forks they count only commits added after the fork. `LOC` is the number of lines in text files in the repository snapshot, including documentation, while excluding `.git`, dependency/vendor trees, generated/build output, caches, and binary files. The stack is intentionally brief and inferred from repository metadata and source layout.
+**Scope.** 37 repositories owned by `vernikr`, including private repositories and forks, captured 2026-10-13 before creating `mother`; the catalog repository intentionally does not list itself. Commit counts are for the default branch; for forks they count only commits added after the fork. `LOC` is the number of lines in text files in the repository snapshot, including documentation, while excluding `.git`, dependency/vendor trees, generated/build output, caches, and binary files. The stack is intentionally brief and inferred from repository metadata and source layout.
 
 | # | Project | Business value | Platform(s) | Stack | Primary user | Fork | LOC* | Commits† |
 |---:|---|---|---|---|---|---|---:|---:|
@@ -32,7 +32,7 @@
 | 26 | [tt](https://github.com/vernikr/tt) | Provides a small repeatable utility for daily workflows. | CLI | Python | Human | No | 504 | 12 |
 | 27 | [tspu-vpn](https://github.com/vernikr/tspu-vpn) | Simplifies a repeatable VPN/network setup. | CLI, network | Shell | Human | No | 300 | 11 |
 | 28 | [tg2docx](https://github.com/vernikr/tg2docx) | Turns Telegram exports into editable documents. | macOS | Swift | Human | No | 5,675 | 8 |
-| 29 | [QLMarkdown](https://github.com/vernikr/QLMarkdown) | Adds Markdown preview to the macOS file workflow. | macOS, Quick Look | C++, Swift | Human | Yes — `sbarex/QLMarkdown` | 1,118,120 | 7 |
+| 29 | [QLMarkdown](https://github.com/vernikr/QLMarkdown) | Adds Markdown preview to the macOS file workflow. | macOS, Quick Look | C++, Swift | Human | Yes — `sbarex/QLMarkdown` | 69,010 | 7 |
 | 30 | [gemini-router](https://github.com/vernikr/gemini-router) | Routes model requests to the right Gemini workflow. | MCP, CLI | Python | Agent | No | 2,500 | 6 |
 | 31 | [vivica-uikit](https://github.com/vernikr/vivica-uikit) | Packages reusable UI foundations for fast prototyping. | Web | TypeScript, React | Human | No | 19,703 | 5 |
 | 32 | [freebuff-bridge](https://github.com/vernikr/freebuff-bridge) | Bridges external tools into a consistent agent workflow. | MCP, CLI | TypeScript/Node.js | Agent | No | 12,993 | 3 |
@@ -42,6 +42,6 @@
 | 36 | [futures-screener-ui](https://github.com/vernikr/futures-screener-ui) | Provides an early interface for futures screening. | Web | CSS, HTML | Human | No | 1,453 | 2 |
 | 37 | [survey-relay-bot](https://github.com/vernikr/survey-relay-bot) | Relays survey responses into a usable operations channel. | Telegram, bot | Python | Human | No | 5,190 | 1 |
 
-\* Text-line counts are a practical repository-size measure, not a language-aware `cloc` total. Generated and dependency trees are excluded; documentation remains included.
+\* Text-line counts are a practical repository-size measure, not a language-aware `cloc` total. Generated and dependency trees are excluded; documentation remains included. For `QLMarkdown`, bundled `highlight-wrapper`, `dependencies`, and `cmark-extra` are also excluded.
 
 † Fork counts are post-fork commits only: `biblio-mcp` 129, `Maccy` 35, `QLMarkdown` 7.
