@@ -123,11 +123,11 @@ Working directory: repository root `/Users/vernikr/Downloads/projects/mother`.
 | Application tests | Not applicable; this repository contains documentation only |
 | Lint/typecheck/build | Not applicable; no application toolchain is configured |
 | Git status at handoff start | Clean: `main...origin/main` |
-| Published revision | `8b0d927` was pushed to `origin/main` |
+| Published revision | Handoff and Project setup are pushed to `origin/main`; verify the current revision with `git log -1 --oneline` |
 | GitHub Project API access | Available after `gh auth refresh -h github.com -s read:project,project`; Project and Issue #1 were created and read back successfully |
 
-The last confirmed repository state before this handoff was clean and
-synchronized with `origin/main` at `8b0d927`.
+The last confirmed repository state was clean and synchronized with
+`origin/main`; verify the current revision with `git log -1 --oneline`.
 
 ## GitHub access note
 
