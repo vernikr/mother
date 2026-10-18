@@ -100,6 +100,16 @@ payload и иные секреты не сохраняются в этом ре�
 
 ## Что еще не решено
 
+Дополнительное направление владельца от 2026-10-18 зафиксировано в
+[`owner-direction-2026-10-18.md`](owner-direction-2026-10-18.md). Оно уточняет
+приоритеты следующего этапа: `decisions/index.md` и numbered decisions,
+feature tree с FR-ID, researches и первичные материалы, fixtures, blockers,
+индекс документации, reflection/friction inbox, визуализацию сложных
+алгоритмов, реестр констант и адаптивный шаблон Issue. `state.md` временно
+отложен. Для Project под вопросом остаются Risk, Priority, Agent state и
+календарные поля; требуется исследовать Business Value и поддержку
+multi-repository Projects.
+
 Первый исследовательский отчет сохранен в
 [`01-structure-and-files.md`](01-structure-and-files.md). Его рабочий вывод:
 GitHub Issue должен быть единицей работы, GitHub Projects — операционной
