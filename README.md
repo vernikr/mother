@@ -11,3 +11,6 @@ notes and agreed decisions will be added there as the methodology evolves.
 The first research report, covering repository structure, key files and the
 interaction with GitHub Projects, is in
 [`research/agent-first/01-structure-and-files.md`](research/agent-first/01-structure-and-files.md).
+
+The current resumable handoff for the next agent is in
+[`research/agent-first/HANDOFF.md`](research/agent-first/HANDOFF.md).
