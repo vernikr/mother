@@ -41,7 +41,7 @@ verification and explicit escalation.
 - Published the first working report in
   [`01-structure-and-files.md`](01-structure-and-files.md).
 - Added navigation links from the root [`README.md`](../../README.md).
-- Created the private GitHub Project [Project methodology matrix](https://github.com/users/vernikr-personal/projects/4).
+- Created the private organization-level GitHub Project [Project methodology matrix](https://github.com/orgs/vernikr/projects/1), linked to `vernikr/mother`.
 - Created [Issue #1](https://github.com/vernikr/mother/issues/1), added it to
   that Project exactly once, and verified its initial Project status is `Todo`.
 
@@ -102,7 +102,7 @@ a cheap command/query that can re-check it.
 ## Exact next action
 
 Start by reading this handoff, [Issue #1](https://github.com/vernikr/mother/issues/1),
-the [Project](https://github.com/users/vernikr-personal/projects/4) and
+the [organization Project](https://github.com/orgs/vernikr/projects/1) and
 [`01-structure-and-files.md`](01-structure-and-files.md). Then inspect the
 Project's actual fields and views without changing the approved direction.
 Draft a proposal for the detailed root `AGENTS.md` template, `docs/state.md`
