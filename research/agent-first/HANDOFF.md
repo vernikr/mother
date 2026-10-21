@@ -7,7 +7,7 @@
 > **Branch:** `main` (the handoff was first added in `f58d0ce`; verify the
 > current revision with `git log -1 --oneline`)
 >
-> **Updated:** 2026-10-18
+> **Updated:** 2026-10-22
 
 ## Goal
 
@@ -43,7 +43,7 @@ verification and explicit escalation.
 - Added navigation links from the root [`README.md`](../../README.md).
 - Created the private organization-level GitHub Project [Project methodology matrix](https://github.com/orgs/vernikr/projects/1), linked to `vernikr/mother`.
 - Created [Issue #1](https://github.com/vernikr/mother/issues/1), added it to
-  that Project exactly once, and verified its initial Project status is `Todo`.
+  that Project exactly once; its current Project status is `In Progress`.
 - Incorporated the owner's follow-up direction from
   [`owner-direction-2026-10-18.md`](owner-direction-2026-10-18.md).
 - Inspected the actual organization Project, its current fields, view and
@@ -57,6 +57,15 @@ verification and explicit escalation.
 - Started the Project pilot: renamed the table view to `All work`, added the
   `Queue` board and `Blocked` table views, changed Status to `Inbox`, `Ready`,
   `In Progress`, `Blocked`, `Done`, and moved Issue #1 to `In Progress`.
+- Added the root conformance entry point [`MOTHER.md`](../../MOTHER.md).
+- Created the guideline epic [Issue #2](https://github.com/vernikr/mother/issues/2)
+  and sub-issues for the conformance entry point, LLM prompts, fork divergence,
+  MCP/CLI integration and universal logging ([#3](https://github.com/vernikr/mother/issues/3),
+  [#4](https://github.com/vernikr/mother/issues/4), [#5](https://github.com/vernikr/mother/issues/5),
+  [#6](https://github.com/vernikr/mother/issues/6), [#7](https://github.com/vernikr/mother/issues/7)).
+- Created the organization-level `Business Value` Issue field as a number and
+  added it to the methodology Project. Initial working values were assigned to
+  Issues #1–#7 after triage.
 
 ## New owner direction
 
@@ -120,8 +129,8 @@ a cheap command/query that can re-check it.
 3. The Issue → Project → agent run → verification → Done lifecycle is not yet
    formalized.
 4. Project fields, statuses, views and automations have been inspected on the
-   methodology Project; the first approved pilot changes are applied, while
-   Business Value still needs the organization-level Issue field permission.
+   methodology Project; the first approved pilot changes and the organization-
+   level Business Value field are applied.
 5. Project boards for the owner's other repositories were not audited in the prior
    research because the local GitHub auth session lacked `read:project`.
 6. No mass migration of the 37 repositories has been authorized or performed.
@@ -134,9 +143,10 @@ Read this handoff, [`owner-direction-2026-10-18.md`](owner-direction-2026-10-18.
 the [organization Project](https://github.com/orgs/vernikr/projects/1),
 [`01-structure-and-files.md`](01-structure-and-files.md) and the new
 [`02-proposal-documentation-and-project.md`](02-proposal-documentation-and-project.md).
-Review the remaining questions in section 8 of the proposal. Keep `state.md`
-deferred, do not migrate any other repository before that agreement, and finish
-the Business Value field once the GitHub organization permission is available.
+Read the new [`MOTHER.md`](../../MOTHER.md), review the guideline epic and its
+sub-issues, and continue the detailed research one profile at a time. Keep
+`state.md` deferred and do not migrate any other repository before the relevant
+profile is agreed and piloted.
 
 Do not start a mass migration or create a final template before the owner
 approves the proposed source-of-truth and Project lifecycle decisions.
@@ -147,11 +157,11 @@ Working directory: repository root `/Users/vernikr/Downloads/projects/mother`.
 
 | Check | Result |
 |---|---|
-| `git diff --check` | Passed before the previous research commit |
+| `git diff --check` | Passed before the current handoff |
 | Application tests | Not applicable; this repository contains documentation only |
 | Lint/typecheck/build | Not applicable; no application toolchain is configured |
 | Git status at handoff start | Clean: `main...origin/main` |
-| Published revision | Handoff and Project setup are pushed to `origin/main`; verify the current revision with `git log -1 --oneline` |
+| Published revision | Verify the current revision with `git log -1 --oneline` |
 | GitHub Project API access | Available after `gh auth refresh -h github.com -s read:project,project`; Project and Issue #1 were created and read back successfully |
 
 The last confirmed repository state was clean and synchronized with

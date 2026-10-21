@@ -4,7 +4,7 @@
 > предложение не является утвержденной методологией и не разрешает массовую
 > миграцию.
 >
-> **Дата проверки:** 2026-10-21.
+> **Дата проверки:** 2026-10-22.
 >
 > **Связанная работа:** [Issue #1](https://github.com/vernikr/mother/issues/1).
 
@@ -35,7 +35,13 @@
   - [6.4. Views](#64-views)
 - [7. Lifecycle Issue → agent run → evidence](#7-lifecycle-issue--agent-run--evidence)
 - [8. Что нужно согласовать до реализации](#8-что-нужно-согласовать-до-реализации)
-- [9. Источники и проверка](#9-источники-и-проверка)
+- [9. Новые профильные гайдлайны](#9-новые-профильные-гайдлайны)
+  - [9.1. Conformance entry point](#91-conformance-entry-point)
+  - [9.2. LLM и реестр промптов](#92-llm-и-реестр-промптов)
+  - [9.3. Fork divergence и Why this fork](#93-fork-divergence-и-why-this-fork)
+  - [9.4. MCP, CLI skills и From GitHub](#94-mcp-cli-skills-и-from-github)
+  - [9.5. Универсальное логирование](#95-универсальное-логирование)
+- [10. Источники и проверка](#10-источники-и-проверка)
 
 ## 1. Зачем нужен этот документ
 
@@ -81,7 +87,7 @@ matrix](https://github.com/orgs/vernikr/projects/1):
 | Status Issue #1 | `In Progress` |
 | Views | `All work` (table), `Queue` (board), `Blocked` (table) |
 | Статусы | `Inbox`, `Ready`, `In Progress`, `Blocked`, `Done` |
-| Пользовательские поля | `Business Value` пока не создано: GitHub требует дополнительный organization scope |
+| Пользовательские поля | organization-level `Business Value`, number, шкала `0–5` |
 | Системные поля | Title, Assignees, Status, Labels, Linked pull requests, Milestone, Repository, Reviewers, Parent issue, Sub-issues progress, Created, Updated, Closed |
 | Включенные workflows | auto-add sub-issues, auto-close issue, item added, item closed, pull request linked, pull request merged |
 
@@ -683,7 +689,54 @@ Views являются проекциями. Они не создают допо
 перечитать Project и проверить результат через API. Массовая миграция 37
 репозиториев в этот этап не входит.
 
-## 9. Источники и проверка
+## 9. Новые профильные гайдлайны
+
+Новые требования следует развивать как отдельные профили. Профиль применяется
+только к проектам, где есть соответствующая потребность. Общий entry point для
+такой работы — корневой [`MOTHER.md`](../../MOTHER.md).
+
+### 9.1. Conformance entry point
+
+`MOTHER.md` — короткая отправная инструкция для агента, которого попросили
+привести другой проект в соответствие с mother. Она задает порядок чтения,
+осмотр проекта перед изменениями, выбор применимых профилей, работу через
+Issue, минимальность миграции, проверку и формат итогового отчета.
+
+Детальная проработка и поддержание файла ведутся в [Issue #3](https://github.com/vernikr/mother/issues/3).
+
+### 9.2. LLM и реестр промптов
+
+Проекты, использующие LLM, должны получить отдельный профиль. Его центральный
+артефакт — реестр промптов, где один Markdown-файл описывает один prompt.
+Нужно отдельно определить единый формат подставляемых значений, metadata,
+версий, вариантов для моделей, примеров и проверок. Детальная работа ведется
+в [Issue #4](https://github.com/vernikr/mother/issues/4).
+
+### 9.3. Fork divergence и Why this fork
+
+Проекты-форки должны иметь корневой человекочитаемый реестр отличий от
+оригинала. Он должен быть написан на языке бизнеса и служить источником для
+раздела `Why this fork` в GitHub README. Наличие такого раздела в README —
+требование для форков. Детальная работа ведется в [Issue #5](https://github.com/vernikr/mother/issues/5).
+
+### 9.4. MCP, CLI skills и From GitHub
+
+Проекты с MCP должны иметь соответствующие skills и описывать основные
+операции через CLI, а не делать MCP единственным способом работы. Отдельно
+нужно определить host-интеграцию для добавления MCP через UI вроде `From
+GitHub`, включая роль Claude Code-файлов или других instruction/configuration
+адаптеров. Детальная работа ведется в [Issue #6](https://github.com/vernikr/mother/issues/6).
+
+### 9.5. Универсальное логирование
+
+Для проектов, где логирование возможно и полезно, нужен общий функциональный
+контракт, независимый от платформы. Минимальное уже зафиксированное требование:
+каждая запись лога должна содержать исходного актора — `human`, `agent` или
+`system`. В качестве исходных примеров нужно изучить `arena-bridge` и
+`yt-summary`, учитывая, что их logging systems еще требуют доработки. Детальная
+работа ведется в [Issue #7](https://github.com/vernikr/mother/issues/7).
+
+## 10. Источники и проверка
 
 - Фактическое состояние Project: `gh project view 1 --owner vernikr --format json`.
 - Поля Project: `gh project field-list 1 --owner vernikr --format json`.
