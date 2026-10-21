@@ -46,6 +46,17 @@ verification and explicit escalation.
   that Project exactly once, and verified its initial Project status is `Todo`.
 - Incorporated the owner's follow-up direction from
   [`owner-direction-2026-10-18.md`](owner-direction-2026-10-18.md).
+- Inspected the actual organization Project, its current fields, view and
+  built-in workflows through the GitHub API.
+- Drafted the proposal in
+  [`02-proposal-documentation-and-project.md`](02-proposal-documentation-and-project.md).
+- Incorporated the owner's first review on 2026-10-21: root feature tree,
+  `docs/research/`, test-local fixtures, Issue-owned blockers, the revised
+  feedback inbox/archive/outbox model, business evidence, no separate Verify
+  status, and a separate Blocked view.
+- Started the Project pilot: renamed the table view to `All work`, added the
+  `Queue` board and `Blocked` table views, changed Status to `Inbox`, `Ready`,
+  `In Progress`, `Blocked`, `Done`, and moved Issue #1 to `In Progress`.
 
 ## New owner direction
 
@@ -108,24 +119,24 @@ a cheap command/query that can re-check it.
    approved.
 3. The Issue → Project → agent run → verification → Done lifecycle is not yet
    formalized.
-4. Project fields, statuses, views and automations have not been fully
-   inspected on the owner's actual organization Project or approved.
-5. Project boards for the owner's repositories were not audited in the prior
+4. Project fields, statuses, views and automations have been inspected on the
+   methodology Project; the first approved pilot changes are applied, while
+   Business Value still needs the organization-level Issue field permission.
+5. Project boards for the owner's other repositories were not audited in the prior
    research because the local GitHub auth session lacked `read:project`.
 6. No mass migration of the 37 repositories has been authorized or performed.
 7. No final policy for the methodology repository itself has been approved.
 
 ## Exact next action
 
-Start by reading this handoff, [`owner-direction-2026-10-18.md`](owner-direction-2026-10-18.md),
+Read this handoff, [`owner-direction-2026-10-18.md`](owner-direction-2026-10-18.md),
 [Issue #1](https://github.com/vernikr/mother/issues/1),
-the [organization Project](https://github.com/orgs/vernikr/projects/1) and
-[`01-structure-and-files.md`](01-structure-and-files.md). Then inspect the
-Project's actual fields and views without changing the approved direction.
-First research the newly stated open questions and draft a proposal for the
-documentation hierarchy, Issue/artifact model and Project field schema. Keep
-`state.md` deferred. Present the proposal for owner agreement before
-implementing it or migrating any other repository.
+the [organization Project](https://github.com/orgs/vernikr/projects/1),
+[`01-structure-and-files.md`](01-structure-and-files.md) and the new
+[`02-proposal-documentation-and-project.md`](02-proposal-documentation-and-project.md).
+Review the remaining questions in section 8 of the proposal. Keep `state.md`
+deferred, do not migrate any other repository before that agreement, and finish
+the Business Value field once the GitHub organization permission is available.
 
 Do not start a mass migration or create a final template before the owner
 approves the proposed source-of-truth and Project lifecycle decisions.

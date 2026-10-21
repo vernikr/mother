@@ -15,5 +15,9 @@ The first research report, covering repository structure, key files and the
 interaction with GitHub Projects, is in
 [`research/agent-first/01-structure-and-files.md`](research/agent-first/01-structure-and-files.md).
 
+The current proposal for the documentation hierarchy, Issue model and Project
+schema is in
+[`research/agent-first/02-proposal-documentation-and-project.md`](research/agent-first/02-proposal-documentation-and-project.md).
+
 The current resumable handoff for the next agent is in
 [`research/agent-first/HANDOFF.md`](research/agent-first/HANDOFF.md).
