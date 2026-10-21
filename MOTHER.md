@@ -22,9 +22,16 @@ Compare the project with the baseline and select only applicable profiles:
 - fork divergence registry;
 - MCP and CLI skill integration;
 - universal logging requirements;
+- GUI and TUI UI/UX requirements;
+- approved stack, framework and package-manager versions;
 - platform, UI, service, research or unattended-operation extensions.
 
 Record missing pieces, contradictions and obsolete documents before editing.
+
+Guidelines may eventually be delivered as repository documents, agent skills,
+or a deliberate combination of both. Until that contract is approved, do not
+duplicate a guideline in two places: identify the canonical source and treat
+any skill as an operational adapter around it.
 
 ## 3. Work from an Issue
 

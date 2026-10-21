@@ -63,9 +63,16 @@ verification and explicit escalation.
   MCP/CLI integration and universal logging ([#3](https://github.com/vernikr/mother/issues/3),
   [#4](https://github.com/vernikr/mother/issues/4), [#5](https://github.com/vernikr/mother/issues/5),
   [#6](https://github.com/vernikr/mother/issues/6), [#7](https://github.com/vernikr/mother/issues/7)).
-- Created the organization-level `Business Value` Issue field as a number and
-  added it to the methodology Project. Initial working values were assigned to
-  Issues #1–#7 after triage.
+ - Created the organization-level `Business Value` Issue field as a number and
+   added it to the methodology Project. Initial working values were assigned to
+   Issues #1–#7 after triage.
+ - Added new guideline work for packaging documents versus skills, shared GUI/TUI
+   UI/UX, supported stacks and versions, and cross-repository conformance
+   tracking ([#8](https://github.com/vernikr/mother/issues/8),
+   [#9](https://github.com/vernikr/mother/issues/9),
+   [#10](https://github.com/vernikr/mother/issues/10), and epic
+   [#11](https://github.com/vernikr/mother/issues/11) with [#12](https://github.com/vernikr/mother/issues/12)
+   and [#13](https://github.com/vernikr/mother/issues/13)).
 
 ## New owner direction
 
@@ -135,6 +142,8 @@ a cheap command/query that can re-check it.
    research because the local GitHub auth session lacked `read:project`.
 6. No mass migration of the 37 repositories has been authorized or performed.
 7. No final policy for the methodology repository itself has been approved.
+8. The packaging contract for guidelines, UI/UX requirements, supported stack
+   matrix and cross-repository conformance model are open research topics.
 
 ## Exact next action
 
@@ -143,10 +152,10 @@ Read this handoff, [`owner-direction-2026-10-18.md`](owner-direction-2026-10-18.
 the [organization Project](https://github.com/orgs/vernikr/projects/1),
 [`01-structure-and-files.md`](01-structure-and-files.md) and the new
 [`02-proposal-documentation-and-project.md`](02-proposal-documentation-and-project.md).
-Read the new [`MOTHER.md`](../../MOTHER.md), review the guideline epic and its
-sub-issues, and continue the detailed research one profile at a time. Keep
-`state.md` deferred and do not migrate any other repository before the relevant
-profile is agreed and piloted.
+Read the new [`MOTHER.md`](../../MOTHER.md), review guideline epic #2 and
+conformance epic #11 with their sub-issues, and continue the detailed research
+one profile at a time. Keep `state.md` deferred and do not migrate any other
+repository before the relevant profile is agreed and piloted.
 
 Do not start a mass migration or create a final template before the owner
 approves the proposed source-of-truth and Project lifecycle decisions.
