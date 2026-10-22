@@ -80,6 +80,11 @@ verification and explicit escalation.
    deterministic codebase-health tooling ([#16](https://github.com/vernikr/mother/issues/16)),
    adaptive CI/CD and development dependencies ([#17](https://github.com/vernikr/mother/issues/17))
    and refactoring prompts/evidence tracking ([#18](https://github.com/vernikr/mother/issues/18)).
+ - Added the owner-facing project controllability epic [#19](https://github.com/vernikr/mother/issues/19)
+   with work for the universal information baseline ([#20](https://github.com/vernikr/mother/issues/20)),
+   representation selection, freshness and evidence ([#21](https://github.com/vernikr/mother/issues/21)),
+   presentations and owner-facing briefings ([#22](https://github.com/vernikr/mother/issues/22)),
+   and adaptive architecture diagrams and schemas ([#23](https://github.com/vernikr/mother/issues/23)).
 
 ## New owner direction
 
@@ -116,6 +121,10 @@ These are **not yet approved as final methodology**:
 8. For fork bugs, identify the responsible repository or component before
    opening an upstream Issue; search existing Issues first and link the local
    fix and evidence back to the responsible repository.
+9. Treat `FEATURES.md` and `ALGORITHMS.md` as examples of a broader owner-facing
+   controllability system. Keep canonical sources separate from generated
+   diagrams, images, dashboards and presentations, and choose representations by
+   information value versus maintenance cost.
 
 The report distinguishes confirmed external facts from working recommendations
 and lists source URLs. Do not silently turn recommendations into policy.
@@ -157,6 +166,9 @@ a cheap command/query that can re-check it.
 9. The upstream-cause workflow, adaptive CI/CD baseline, deterministic health
    tooling and refactoring methodology are open research topics tracked under
    epic #14.
+10. The owner-facing information baseline, adaptive visual representations,
+    presentations and freshness/evidence rules are open research topics tracked
+    under epic #19.
 
 ## Exact next action
 
@@ -166,10 +178,10 @@ the [organization Project](https://github.com/orgs/vernikr/projects/1),
 [`01-structure-and-files.md`](01-structure-and-files.md) and the new
 [`02-proposal-documentation-and-project.md`](02-proposal-documentation-and-project.md).
 Read the new [`MOTHER.md`](../../MOTHER.md), review guideline epic #2,
-conformance epic #11 and repository-health epic #14 with their sub-issues, and
-continue the detailed research one profile at a time. Keep `state.md` deferred
-and do not migrate any other repository before the relevant profile is agreed
-and piloted.
+conformance epic #11, repository-health epic #14 and owner-facing
+controllability epic #19 with their sub-issues, and continue the detailed
+research one profile at a time. Keep `state.md` deferred and do not migrate any
+other repository before the relevant profile is agreed and piloted.
 
 Do not start a mass migration or create a final template before the owner
 approves the proposed source-of-truth and Project lifecycle decisions.

@@ -26,6 +26,7 @@ Compare the project with the baseline and select only applicable profiles:
 - approved stack, framework and package-manager versions;
 - repository health and CI/CD/development-dependency requirements;
 - deterministic codebase-health checks and refactoring evidence;
+- owner-facing project understanding and controllability;
 - platform, UI, service, research or unattended-operation extensions.
 
 For a bug in a fork, also map the fork lineage and relevant component boundaries
@@ -83,6 +84,13 @@ For refactoring or health work, capture a baseline before changing code and
 report the intended invariant, deterministic checks, measured result and residual
 risk. Do not treat a health score or static finding as proof of a defect without
 project-specific evidence.
+
+For owner-facing project understanding, distinguish universal information from
+profile-specific representations. Keep canonical facts in maintainable text or
+structured data, and generate diagrams, images, dashboards or presentations when
+they reduce the owner's reading cost. The agent should justify the selected
+representation stack, avoid duplicate sources of truth, record freshness checks,
+and report what remains uncertain.
 
 ## 6. Stop and ask the owner when
 
