@@ -2,7 +2,7 @@
 
 Private index of the projects owned by `vernikr` on GitHub.
 
-The current inventory is in [`projects-overview.md`](projects-overview.md). It covers the 37 repositories visible through the active GitHub account at the time of generation and is sorted by commit count.
+The repository inventory is a dated snapshot in [`projects-overview.md`](projects-overview.md). The current snapshot covers 37 repositories visible through the active GitHub account on October 13, 2026 and is sorted by commit count.
 
 The short entry point for bringing another project into alignment with this
 methodology is [`MOTHER.md`](MOTHER.md).
@@ -21,6 +21,10 @@ interaction with GitHub Projects, is in
 The current proposal for the documentation hierarchy, Issue model and Project
 schema is in
 [`research/agent-first/02-proposal-documentation-and-project.md`](research/agent-first/02-proposal-documentation-and-project.md).
+
+Current working decisions and unresolved policy questions are indexed in
+[`decisions/index.md`](decisions/index.md). Read it before treating research or
+proposal text as an operational rule.
 
 The current resumable handoff for the next agent is in
 [`research/agent-first/HANDOFF.md`](research/agent-first/HANDOFF.md).

@@ -3,6 +3,11 @@
 This file is the short entry point for an agent asked to bring a project into
 alignment with the methodology described by `vernikr/mother`.
 
+For the methodology repository itself, use [`decisions/index.md`](decisions/index.md)
+to resolve current working decisions and open questions. Research and proposals
+provide evidence and design options; they do not silently override operational
+guidance.
+
 ## 1. Start with the project, not with the template
 
 Read the target repository's README, instruction files, current handoff/state,
