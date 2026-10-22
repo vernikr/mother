@@ -24,7 +24,14 @@ Compare the project with the baseline and select only applicable profiles:
 - universal logging requirements;
 - GUI and TUI UI/UX requirements;
 - approved stack, framework and package-manager versions;
+- repository health and CI/CD/development-dependency requirements;
+- deterministic codebase-health checks and refactoring evidence;
 - platform, UI, service, research or unattended-operation extensions.
+
+For a bug in a fork, also map the fork lineage and relevant component boundaries
+before editing. Decide whether the original cause is in the fork, its immediate
+upstream, an upstream ancestor or an external component. Record the evidence and
+the candidate responsible repository.
 
 Record missing pieces, contradictions and obsolete documents before editing.
 
@@ -42,6 +49,14 @@ spans sessions, repositories, external systems or difficult verification.
 Do not create a parallel master backlog in `TODO.md`. Keep the Issue and Project
 as the work-management source of truth and keep durable project knowledge in
 the repository.
+
+When a fork bug is caused outside the owned fork, search the candidate responsible
+repository for similar open, closed and duplicate Issues before creating one. If
+no suitable Issue exists, create the report from the owner's account in that
+repository after implementing and verifying the necessary local fix. Include the
+reproduction, root-cause evidence, fork lineage, component boundary, local fix or
+workaround, and links to relevant commits or pull requests. Re-read the created
+or reused Issue and record its URL and state in the local work item.
 
 ## 4. Apply the smallest complete change
 
@@ -63,6 +78,11 @@ Project items after updates.
 Do not mark work complete because a document or command exists. Mark it complete
 only when its acceptance criteria and evidence are satisfied, or explicitly
 report what remains blocked.
+
+For refactoring or health work, capture a baseline before changing code and
+report the intended invariant, deterministic checks, measured result and residual
+risk. Do not treat a health score or static finding as proof of a defect without
+project-specific evidence.
 
 ## 6. Stop and ask the owner when
 
