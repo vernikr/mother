@@ -1,0 +1,35 @@
+name: GitHub Projects v2 bridge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.projects-bridge/commands/*.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: projects-v2-bridge
+  cancel-in-progress: false
+
+jobs:
+  execute-command:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 2
+    steps:
+      - name: Check out command and bridge code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Execute allow-listed Projects v2 command
+        env:
+          PROJECTS_TOKEN: ${{ secrets.PROJECTS_TOKEN }}
+          OUTPUT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          REF_NAME: ${{ github.ref_name }}
+          EVENT_PATH: ${{ github.event_path }}
+        run: node scripts/projects-v2-bridge.mjs
