@@ -10,6 +10,7 @@
 - Keep evergreen documentation free of volatile numeric facts; update relevant evergreen docs after functional changes.
 - Use Conventional Commits: `type(scope): description`. For versioned software, use SemVer: fixes → PATCH, features → MINOR, breaking changes → MAJOR.
 - When a task needs a durable plan or report, use `docs/worklog/YYYY.MM.DD-task-slug/`; move completed task folders to `docs/worklog/archive/`. GitHub Issues and Projects remain the source of truth for work status.
+- When recurring friction, unclear expectations, repeated corrections or avoidable steps suggest that agent guidance could be improved, proactively propose a focused update to the relevant `AGENTS.md`. State the observed gap and expected benefit, and suggest concise wording. Prefer reusable guidance over one-off rules.
 - In chat, lead with the outcome and write for a busy, non-technical owner: plain business language, concise, with decisions or required actions up front. Avoid code-level details and unexplained jargon.
 
 ## ChatGPT Web Free
