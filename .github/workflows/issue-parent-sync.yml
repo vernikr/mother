@@ -103,7 +103,7 @@ jobs:
 
           # Remove the one-shot command only after the hierarchy operation succeeded.
           cleaned = body[:match.start()] + body[match.end():]
-          cleaned = cleaned.strip()
+          cleaned = cleaned.strip("\\r\\n")
           request("PATCH", f"{base}/{issue_number}", {"body": cleaned})
           print("Removed the one-shot parent command from the issue body.")
           PY
