@@ -1,5 +1,9 @@
 # mother
 
+An evolving, adaptive template for agent-first projects. Its goal is to make work on each project as effective as possible while minimizing the effort, time and context required from both agents and people.
+
+This repository develops and tests the methodology, then provides a practical baseline for creating new projects and improving existing ones.
+
 Private index of the projects owned by vernikr on GitHub.
 
 The repository inventory is a dated snapshot in [projects-overview.md](projects-overview.md). The current snapshot covers 37 repositories visible through the active GitHub account on October 13, 2026 and is sorted by commit count.
