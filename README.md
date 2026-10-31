@@ -22,10 +22,6 @@ The current proposal for the documentation hierarchy, Issue model and Project
 schema is in
 [research/agent-first/02-proposal-documentation-and-project.md](research/agent-first/02-proposal-documentation-and-project.md).
 
-The native GitHub sub-issue workflow retrospective and its implementation
-contract are in
-[research/agent-first/03-github-sub-issue-workflow.md](research/agent-first/03-github-sub-issue-workflow.md).
-
 Current working decisions and unresolved policy questions are indexed in
 [decisions/index.md](decisions/index.md). Read it before treating research or
 proposal text as an operational rule.
