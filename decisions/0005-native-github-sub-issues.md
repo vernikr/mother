@@ -20,8 +20,8 @@ The caller invokes the central workflow through vernikr/mother/.github/workflows
 
 ## Command contract
 
-- <!-- issue-parent: #NUMBER --> — set or move the child Issue under the specified parent.
-- <!-- issue-parent: none --> — detach the child from its current parent.
+- **Set or move:** add the standalone line `<!-- issue-parent: #NUMBER -->` to the child Issue body.
+- **Detach:** add the standalone line `<!-- issue-parent: none -->`.
 
 The command is a standalone line in the child Issue body. The workflow processes it on Issue creation or edit and removes the marker after success. Parent and child must be Issues in the same repository. Self-parenting and pull-request parents are rejected. The current implementation only accepts events sent by vernikr-personal.
 
@@ -45,7 +45,7 @@ Agents must verify the Actions run and the resulting native parent relationship.
 
 ## Implementation
 
-- Reusable workflow: [ .github/workflows/issue-parent-sync.yml ](../.github/workflows/issue-parent-sync.yml)
-- Caller template: [ .github/workflow-templates/issue-parent-sync.yml ](../.github/workflow-templates/issue-parent-sync.yml)
+- Reusable workflow: [.github/workflows/issue-parent-sync.yml](../.github/workflows/issue-parent-sync.yml)
+- Caller template: [.github/workflow-templates/issue-parent-sync.yml](../.github/workflow-templates/issue-parent-sync.yml)
 - Retrospective: [native GitHub sub-issue workflow](../research/agent-first/03-github-sub-issue-workflow.md)
 - Work item: [Issue #24](https://github.com/vernikr/mother/issues/24)
