@@ -38,7 +38,7 @@ jobs:
           issue_id = int(os.environ["ISSUE_ID"])
           body = os.environ.get("ISSUE_BODY") or ""
 
-          pattern = re.compile(r"(?m)^[ \\t]*<!-- mother-parent: (none|#([0-9]+)) -->[ \\t]*\\r?$")
+          pattern = re.compile(r"(?m)^[ \t]*<!-- mother-parent: (none|#([0-9]+)) -->[ \t]*\r?$")
           matches = list(pattern.finditer(body))
 
           if not matches:
@@ -103,7 +103,7 @@ jobs:
 
           # Remove the one-shot command only after the hierarchy operation succeeded.
           cleaned = body[:match.start()] + body[match.end():]
-          cleaned = cleaned.strip("\\r\\n")
+          cleaned = cleaned.strip("\r\n")
           request("PATCH", f"{base}/{issue_number}", {"body": cleaned})
           print("Removed the one-shot parent command from the issue body.")
           PY
