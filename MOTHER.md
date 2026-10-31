@@ -56,46 +56,6 @@ Do not create a parallel master backlog in TODO.md. Keep the Issue and Project
 as the work-management source of truth and keep durable project knowledge in
 the repository.
 
-### Native GitHub sub-issues
-
-Use GitHub's native parent/sub-issue relationship. Add exactly one standalone
-command line to the child Issue body:
-
-For set or move, add this standalone line to the child Issue body:
-
-    <!-- issue-parent: #123 -->
-
-For detach, add this standalone line:
-
-    <!-- issue-parent: none -->
-
-The command is processed when the Issue is opened or edited, then removed after
-the hierarchy operation succeeds. Parent and child must be Issues in the same
-repository. A pull request cannot be a parent. After submitting the command,
-verify that the Actions run succeeded and that GitHub shows the expected parent.
-
-If the target repository lacks
-.github/workflows/issue-parent-sync.yml, fetch the canonical file from
-https://raw.githubusercontent.com/vernikr/mother/main/.github/workflow-templates/issue-parent-sync.yml
-and copy it verbatim to that path. Never recreate the caller YAML manually.
-It delegates to the reusable implementation in
-vernikr/mother/.github/workflows/issue-parent-sync.yml@v1.
-
-The local caller is required for GitHub to receive Issue events in that
-repository; the implementation and installation template remain centralized
-in mother. Routine agent instructions stay in the owner's global AGENTS.md;
-do not replicate them across repository-level instruction files. See
-[Decision 0005](decisions/0005-native-github-sub-issues.md) and the
-[implementation retrospective](research/agent-first/03-github-sub-issue-workflow.md).
-
-When a fork bug is caused outside the owned fork, search the candidate responsible
-repository for similar open, closed and duplicate Issues before creating one. If
-no suitable Issue exists, create the report from the owner's account in that
-repository after implementing and verifying the necessary local fix. Include the
-reproduction, root-cause evidence, fork lineage, component boundary, local fix or
-workaround, and links to relevant commits or pull requests. Re-read the created
-or reused Issue and record its URL and state in the local work item.
-
 ## 4. Apply the smallest complete change
 
 Prefer a short root map and focused documents over a large universal template.
