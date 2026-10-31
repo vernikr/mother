@@ -42,7 +42,7 @@ jobs:
           if os.environ.get("ACTOR") != "vernikr-personal":
               print("Sender is not the authorized owner; skipping.")
               sys.exit(0)
-          pattern = re.compile(r"(?m)^[ \\t]*<!-- issue-parent: (none|#([0-9]+)) -->[ \\t]*\\r?$")
+          pattern = re.compile(r"(?m)^[ \t]*<!-- issue-parent: (none|#([0-9]+)) -->[ \t]*\r?$")
           matches = list(pattern.finditer(body))
 
           if not matches:
@@ -111,7 +111,7 @@ jobs:
 
           # Remove the one-shot command only after the hierarchy operation succeeded.
           cleaned = body[:match.start()] + body[match.end():]
-          cleaned = cleaned.strip("\\r\\n")
+          cleaned = cleaned.strip("\r\n")
           request("PATCH", f"{base}/{issue_number}", {"body": cleaned})
           print("Removed the one-shot parent command from the issue body.")
           PY
