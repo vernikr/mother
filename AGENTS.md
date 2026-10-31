@@ -10,6 +10,9 @@
 - Keep evergreen documentation free of volatile numeric facts; update relevant evergreen docs after functional changes.
 - Use Conventional Commits: `type(scope): description`. For versioned software, use SemVer: fixes → PATCH, features → MINOR, breaking changes → MAJOR.
 - When a task needs a durable plan or report, use `docs/worklog/YYYY.MM.DD-task-slug/`; move completed task folders to `docs/worklog/archive/`. GitHub Issues and Projects remain the source of truth for work status.
+- Before changing any tracked repository content or configuration, find an open GitHub Issue that clearly covers the work or create one. This applies to code, documentation, tests, configuration, workflows and other repository files, including small changes.
+- Keep one Issue for each coherent change; split independent work when appropriate. Reference the Issue in the commit or pull request, then update it with the result and verification evidence. Read-only inspection does not require an Issue.
+- If the repository's Issue tracker or required permissions are unavailable, do not make repository changes; report the blocker.
 - When recurring friction, unclear expectations, repeated corrections or avoidable steps suggest that agent guidance could be improved, proactively propose a focused update to the relevant `AGENTS.md`. State the observed gap and expected benefit, and suggest concise wording. Prefer reusable guidance over one-off rules.
 - In chat, lead with the outcome and write for a busy, non-technical owner: plain business language, concise, with decisions or required actions up front. Avoid code-level details and unexplained jargon.
 
