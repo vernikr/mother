@@ -63,21 +63,6 @@ Issue #1 is the active methodology work item. Current epics:
 - #14 — repository health and upstream-cause maintenance;
 - #19 — owner-facing project controllability and information representations.
 
-## Native GitHub sub-issues
-
-[Decision 0005](../../decisions/0005-native-github-sub-issues.md) is approved.
-[Issue #24](https://github.com/vernikr/mother/issues/24) records the problem,
-options, selected design and completed implementation. The reusable workflow
-and canonical caller template are stored in mother; see
-[the retrospective](03-github-sub-issue-workflow.md).
-
-A target repository needs a small local caller at
-.github/workflows/issue-parent-sync.yml. If it is missing, copy the
-canonical template verbatim from the URL documented in MOTHER.md.
-Use the standalone set/move marker with a parent number, or the standalone
-`<!-- issue-parent: none -->` marker to detach. See MOTHER.md for exact syntax.
-Verify both the Actions run and the resulting native parent link.
-
 ## Working principles
 
 - Keep a small base profile and add project-specific extensions.
