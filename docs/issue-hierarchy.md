@@ -37,3 +37,13 @@ After adding the file, verify that Actions are enabled and that a run named **Is
 When an agent needs to create or use sub-issues in a repository, it should first check for the caller workflow above. If it is missing, add it before writing the command marker. If Actions are unavailable, report that blocker rather than leaving an unprocessed command in the Issue body.
 
 Keep the one-line bootstrap rule in the repository's `AGENTS.md` so future agents can self-configure.
+
+## Canonical AGENTS.md instruction
+
+Use this one-line rule in every repository with Issues enabled:
+
+```md
+- For native GitHub sub-issues, ensure `.github/workflows/issue-parent-sync.yml` exists with `issues: [opened, edited]`, `permissions: issues: write`, and a job calling `vernikr/mother/.github/workflows/issue-parent-sync.yml@v1` (create the caller workflow if missing); then put `<!-- issue-parent: #N -->` on its own line in the child Issue body, or use `<!-- issue-parent: none -->` to detach.
+```
+
+For a new repository without `AGENTS.md`, create the file and add this rule before working with parent/sub-issue links. A repository that has neither this rule nor another global agent instruction cannot discover the convention automatically. Add the rule to your agent's global instructions or the repository template to cover repos created in the future.
