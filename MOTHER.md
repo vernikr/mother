@@ -61,8 +61,13 @@ the repository.
 Use GitHub's native parent/sub-issue relationship. Add exactly one standalone
 command line to the child Issue body:
 
-- <!-- issue-parent: #123 --> — set or move the child under Issue #123;
-- <!-- issue-parent: none --> — detach the child from its current parent.
+For set or move, add this standalone line to the child Issue body:
+
+    <!-- issue-parent: #123 -->
+
+For detach, add this standalone line:
+
+    <!-- issue-parent: none -->
 
 The command is processed when the Issue is opened or edited, then removed after
 the hierarchy operation succeeds. Parent and child must be Issues in the same
