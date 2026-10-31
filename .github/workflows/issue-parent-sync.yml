@@ -1,0 +1,109 @@
+name: Sync issue parent
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+concurrency:
+  group: issue-parent-${{ github.event.issue.id }}
+  cancel-in-progress: false
+
+jobs:
+  sync-parent:
+    if: github.event.sender.login == 'vernikr-personal' && github.event.issue.pull_request == null
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply parent command
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_ID: ${{ github.event.issue.id }}
+          ISSUE_BODY: ${{ github.event.issue.body || '' }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          import sys
+          import urllib.error
+          import urllib.request
+
+          token = os.environ["GH_TOKEN"]
+          repository = os.environ["GH_REPOSITORY"]
+          issue_number = int(os.environ["ISSUE_NUMBER"])
+          issue_id = int(os.environ["ISSUE_ID"])
+          body = os.environ.get("ISSUE_BODY") or ""
+
+          pattern = re.compile(r"(?m)^[ \\t]*<!-- mother-parent: (none|#([0-9]+)) -->[ \\t]*\\r?$")
+          matches = list(pattern.finditer(body))
+
+          if not matches:
+              print("No parent command; nothing to do.")
+              sys.exit(0)
+
+          if len(matches) != 1:
+              raise SystemExit("Expected exactly one <!-- mother-parent: #NUMBER|none --> command.")
+
+          match = matches[0]
+          target = int(match.group(2)) if match.group(2) else None
+          if target == issue_number:
+              raise SystemExit("An issue cannot be its own parent.")
+
+          api = "https://api.github.com"
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {token}",
+              "X-GitHub-Api-Version": "2026-03-10",
+          }
+
+          def request(method, path, payload=None, allow_404=False):
+              data = json.dumps(payload).encode("utf-8") if payload is not None else None
+              req = urllib.request.Request(api + path, data=data, headers=headers, method=method)
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      raw = response.read().decode("utf-8")
+                      return json.loads(raw) if raw else {}
+              except urllib.error.HTTPError as error:
+                  if allow_404 and error.code == 404:
+                      return None
+                  detail = error.read().decode("utf-8", errors="replace")
+                  raise RuntimeError(f"GitHub API {method} {path} failed ({error.code}): {detail}") from error
+
+          base = f"/repos/{repository}/issues"
+          current = request("GET", f"{base}/{issue_number}/parent", allow_404=True)
+          current_parent = current["number"] if current else None
+
+          if target is None:
+              if current_parent is None:
+                  print("Issue has no parent; nothing to remove.")
+              else:
+                  request("DELETE", f"{base}/{current_parent}/sub_issue", {"sub_issue_id": issue_id})
+                  print(f"Removed parent #{current_parent} from issue #{issue_number}.")
+          else:
+              parent = request("GET", f"{base}/{target}")
+              if "pull_request" in parent:
+                  raise SystemExit(f"Target #{target} is a pull request, not an issue.")
+              if current_parent == target:
+                  print(f"Issue #{issue_number} is already a sub-issue of #{target}.")
+              else:
+                  request(
+                      "POST",
+                      f"{base}/{target}/sub_issues",
+                      {
+                          "sub_issue_id": issue_id,
+                          "replace_parent": current_parent is not None,
+                      },
+                  )
+                  action = f"Moved issue #{issue_number} from #{current_parent} to #{target}" if current_parent else f"Linked issue #{issue_number} under #{target}"
+                  print(action + ".")
+
+          # Remove the one-shot command only after the hierarchy operation succeeded.
+          cleaned = body[:match.start()] + body[match.end():]
+          cleaned = cleaned.strip()
+          request("PATCH", f"{base}/{issue_number}", {"body": cleaned})
+          print("Removed the one-shot parent command from the issue body.")
+          PY
