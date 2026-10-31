@@ -6,7 +6,7 @@ This repository develops and tests the methodology, then provides a practical ba
 
 Private index of the projects owned by vernikr on GitHub.
 
-The repository inventory is a dated snapshot in [projects-overview.md](projects-overview.md). The current snapshot covers 37 repositories visible through the active GitHub account on October 13, 2026 and is sorted by commit count.
+The repository inventory is maintained as a dated snapshot in [projects-overview.md](projects-overview.md).
 
 The short entry point for bringing another project into alignment with this
 methodology is [MOTHER.md](MOTHER.md).
