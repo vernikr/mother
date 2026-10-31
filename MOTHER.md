@@ -1,9 +1,9 @@
 # Mother conformance guide
 
 This file is the short entry point for an agent asked to bring a project into
-alignment with the methodology described by `vernikr/mother`.
+alignment with the methodology described by vernikr/mother.
 
-For the methodology repository itself, use [`decisions/index.md`](decisions/index.md)
+For the methodology repository itself, use [decisions/index.md](decisions/index.md)
 to resolve current working decisions and open questions. Research and proposals
 provide evidence and design options; they do not silently override operational
 guidance.
@@ -52,9 +52,36 @@ Create or use one GitHub Issue for the conformance work. Split substantial
 independent profiles into sub-issues. Use a repository plan only when the work
 spans sessions, repositories, external systems or difficult verification.
 
-Do not create a parallel master backlog in `TODO.md`. Keep the Issue and Project
+Do not create a parallel master backlog in TODO.md. Keep the Issue and Project
 as the work-management source of truth and keep durable project knowledge in
 the repository.
+
+### Native GitHub sub-issues
+
+Use GitHub's native parent/sub-issue relationship. Add exactly one standalone
+command line to the child Issue body:
+
+- <!-- issue-parent: #123 --> — set or move the child under Issue #123;
+- <!-- issue-parent: none --> — detach the child from its current parent.
+
+The command is processed when the Issue is opened or edited, then removed after
+the hierarchy operation succeeds. Parent and child must be Issues in the same
+repository. A pull request cannot be a parent. After submitting the command,
+verify that the Actions run succeeded and that GitHub shows the expected parent.
+
+If the target repository lacks
+.github/workflows/issue-parent-sync.yml, fetch the canonical file from
+https://raw.githubusercontent.com/vernikr/mother/main/.github/workflow-templates/issue-parent-sync.yml
+and copy it verbatim to that path. Never recreate the caller YAML manually.
+It delegates to the reusable implementation in
+vernikr/mother/.github/workflows/issue-parent-sync.yml@v1.
+
+The local caller is required for GitHub to receive Issue events in that
+repository; the implementation and installation template remain centralized
+in mother. Routine agent instructions stay in the owner's global AGENTS.md;
+do not replicate them across repository-level instruction files. See
+[Decision 0005](decisions/0005-native-github-sub-issues.md) and the
+[implementation retrospective](research/agent-first/03-github-sub-issue-workflow.md).
 
 When a fork bug is caused outside the owned fork, search the candidate responsible
 repository for similar open, closed and duplicate Issues before creating one. If
