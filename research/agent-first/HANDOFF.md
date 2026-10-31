@@ -74,9 +74,9 @@ and canonical caller template are stored in mother; see
 A target repository needs a small local caller at
 .github/workflows/issue-parent-sync.yml. If it is missing, copy the
 canonical template verbatim from the URL documented in MOTHER.md.
-Commands are <!-- issue-parent: #NUMBER --> (set/move) and
-<!-- issue-parent: none --> (detach). Verify both the Actions run and
-the resulting native parent link.
+Use the standalone set/move marker with a parent number, or the standalone
+`<!-- issue-parent: none -->` marker to detach. See MOTHER.md for exact syntax.
+Verify both the Actions run and the resulting native parent link.
 
 ## Working principles
 
