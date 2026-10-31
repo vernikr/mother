@@ -2,6 +2,21 @@
 
 - To manage native GitHub sub-issues, use `<!-- issue-parent: #N -->` or `<!-- issue-parent: none -->` in the child Issue body; when working in another repository, bootstrap it with `.github/workflows/issue-parent-sync.yml` listening to `issues: [opened, edited]`, granting `permissions: issues: write`, and calling `vernikr/mother/.github/workflows/issue-parent-sync.yml@v1`.
 
+## Working conventions
+
+- Use English for repository artifacts and Russian for chat replies.
+- Treat context-window efficiency as the top priority: keep code, instructions and documentation compact; avoid duplication and details recoverable from source files.
+- Write comments only for non-obvious behavior or invariants. Omit historical rationale and details evident from the code.
+- Keep evergreen documentation free of volatile numeric facts; update relevant evergreen docs after functional changes.
+- Use Conventional Commits: `type(scope): description`. For versioned software, use SemVer: fixes → PATCH, features → MINOR, breaking changes → MAJOR.
+- When a task needs a durable plan or report, use `docs/worklog/YYYY.MM.DD-task-slug/`; move completed task folders to `docs/worklog/archive/`. GitHub Issues and Projects remain the source of truth for work status.
+- In chat, lead with the outcome and write for a busy, non-technical owner: plain business language, concise, with decisions or required actions up front. Avoid code-level details and unexplained jargon.
+
+## ChatGPT Web Free
+
+- Use only capabilities exposed in the current session. Do not assume access to the user's machine, a local terminal or filesystem, installed tools, unconnected MCP servers, or persistent sandbox state. Verify that a required capability is available before relying on it; report the specific blocker when it is not.
+- Work autonomously within the task and available permissions. Publish, deploy and update assets across reachable environments without seeking redundant approval; verify the result and report any environment the session could not reach.
+
 ## Retro
 
 Retro helps reduce recurring friction and deviations from the expected flow by capturing useful context and turning it into improvements to future agent behavior and project setup.
