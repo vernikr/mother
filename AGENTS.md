@@ -4,7 +4,7 @@
 
 ## Working conventions
 
-- Use English for repository artifacts and Russian for chat replies.
+- Use English for repository artifacts and GitHub Issue titles, bodies and comments; use Russian for chat replies. Treat owner-authored Russian Issues as raw intake: preserve the intent, then translate and reframe them into actionable English titles and bodies.
 - Treat context-window efficiency as the top priority: keep code, instructions and documentation compact; avoid duplication and details recoverable from source files.
 - Write comments only for non-obvious behavior or invariants. Omit historical rationale and details evident from the code.
 - Keep evergreen documentation free of volatile numeric facts; update relevant evergreen docs after functional changes.
